@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Blogs</h1>
+<div class="row">
+    {% for mpost in mposts %}
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-7">
+                <img src="{{ mpost.image_url }}" class="card-img" alt="...">
+            </div>
+            <div class="col-md-5">
+                <div class="card-body">
+                    <h3 class="card-title"style="text-shadow: 1px 1px grey;">{{ mpost.name }}</h3>
+                    <p class="card-text">{{ mpost.text }}</p>
+                    <p class="card-text">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
